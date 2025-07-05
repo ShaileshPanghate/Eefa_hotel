@@ -2,18 +2,9 @@
 
 import { useState } from 'react';
 
-const images = [
-  '/dining1.jpg',
-  '/dining2.jpg',
-  '/dining3.jpg',
-  '/dining4.jpg',
-  '/dining5.jpg',
-  '/dining6.jpg',
-  '/dining7.jpg',
-  '/dining8.jpg',
-];
+const images = Array.from({ length: 50 }, (_, i) => `/gallery${i + 1}.jpg`); // gallery1.jpg to gallery20.jpg
 
-export default function DiningPage() {
+export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -37,34 +28,18 @@ export default function DiningPage() {
         />
         <div className="absolute inset-0 flex items-end justify-center pb-5 bg-black/30">
           <h1 className="text-white text-3xl md:text-5xl font-light text-center">
-            Dining
+            Gallery
           </h1>
         </div>
       </section>
 
       <section className="w-full px-10 md:px-32 pt-16 pb-10">
-        <div className="flex flex-col md:flex-row items-start gap-12">
-          <div className="md:w-1/2 text-[13px] leading-relaxed font-light">
-            <h2 className="text-xl font-semibold mb-4">APPETITE - THE COFFEE SHOP</h2>
-            <p>
-              Apetite is the best multi cuisine restaurant in the Belgaum city that meets the high culinary
-              standards, and assuring a memorable dining experience. In the hands of honoured chefs,
-              food becomes a presentation of the national and regional culture. This multi-cuisine restaurant
-              blends the best culinary delights with the finest ambience. The comfortable seating arrangement
-              and stylish interiors make your stay as pleasant and relaxing as possible.
-            </p>
-          </div>
-          <div className="md:w-1/2 flex justify-center">
-            <img src="/coffee.png" alt="Coffee" className="w-[300px]" />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {images.map((src, index) => (
             <img
               key={index}
               src={src}
-              alt={`Dining ${index + 1}`}
+              alt={`Gallery ${index + 1}`}
               className="cursor-pointer rounded shadow-md hover:opacity-80 transition duration-200"
               onClick={() => openImage(index)}
             />
