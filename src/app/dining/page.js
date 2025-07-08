@@ -5,12 +5,12 @@ import { useState } from 'react';
 const images = [
   '/dining1.jpg',
   '/dining2.jpg',
-  '/dining3.jpg',
-  '/dining4.jpg',
-  '/dining5.jpg',
-  '/dining6.jpg',
-  '/dining7.jpg',
-  '/dining8.jpg',
+  '/dining1.jpg',
+  '/dining1.jpg',
+  '/dining1.jpg',
+  '/dining1.jpg',
+  '/dining1.jpg',
+  '/dining1.jpg',
 ];
 
 export default function DiningPage() {
@@ -42,35 +42,36 @@ export default function DiningPage() {
         </div>
       </section>
 
-      <section className="w-full px-10 md:px-32 pt-16 pb-10">
-        <div className="flex flex-col md:flex-row items-start gap-12">
-          <div className="md:w-1/2 text-[13px] leading-relaxed font-light">
-            <h2 className="text-xl font-semibold mb-4">APPETITE - THE COFFEE SHOP</h2>
-            <p>
-              Apetite is the best multi cuisine restaurant in the Belgaum city that meets the high culinary
-              standards, and assuring a memorable dining experience. In the hands of honoured chefs,
-              food becomes a presentation of the national and regional culture. This multi-cuisine restaurant
-              blends the best culinary delights with the finest ambience. The comfortable seating arrangement
-              and stylish interiors make your stay as pleasant and relaxing as possible.
-            </p>
-          </div>
-          <div className="md:w-1/2 flex justify-center">
-            <img src="/coffee.png" alt="Coffee" className="w-[300px]" />
-          </div>
-        </div>
+      <section className="w-full px-4 md:px-20 pt-16 pb-10">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-12">
+    <div className="md:w-1/2 text-[19px] leading-relaxed font-light">
+      <h2 className="text-xl font-semibold mb-4">APPETITE - THE COFFEE SHOP</h2>
+      <p>
+        Apetite is the best multi cuisine restaurant in the Belgaum city that meets the high culinary
+        standards, and assuring a memorable dining experience. In the hands of honoured chefs,
+        food becomes a presentation of the national and regional culture. This multi-cuisine restaurant
+        blends the best culinary delights with the finest ambience. The comfortable seating arrangement
+        and stylish interiors make your stay as pleasant and relaxing as possible.
+      </p>
+    </div>
+    <div className="md:w-1/2 flex justify-center">
+      <img src="/coffee.png" alt="Coffee" className="w-[480px]" />
+    </div>
+  </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-          {images.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={`Dining ${index + 1}`}
-              className="cursor-pointer rounded shadow-md hover:opacity-80 transition duration-200"
-              onClick={() => openImage(index)}
-            />
-          ))}
-        </div>
-      </section>
+  <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 px-4">
+    {images.map((src, index) => (
+      <img
+        key={index}
+        src={src}
+        alt={`Dining ${index + 1}`}
+        className="cursor-pointer rounded shadow-md hover:opacity-80 transition duration-200"
+        onClick={() => openImage(index)}
+      />
+    ))}
+  </div>
+</section>
+
 
       {selectedImage && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
