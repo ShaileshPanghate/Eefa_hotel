@@ -10,11 +10,11 @@ const navItems = [
   {
     name: 'Rooms & Suite',
     subItems: [
-      { name: 'Standard Rooms', path: '/rooms/standard' },
-      { name: 'Deluxe Room', path: '/rooms/deluxe' },
-      { name: 'Studio Room', path: '/rooms/studio' },
-      { name: '2BHK Apartment', path: '/rooms/2bhk' },
-      { name: 'Presidential Suite', path: '/rooms/presidential' },
+      { name: 'Standard Rooms', path: '/standard' },
+      { name: 'Deluxe Room', path: '/deluxe' },
+      { name: 'Studio Room', path: '/studio' },
+      { name: '2BHK Apartment', path: '/2bhk' },
+      { name: 'Presidential Suite', path: '/presidential' },
     ],
   },
   { name: 'Dining', path: '/dining' },
@@ -52,26 +52,28 @@ export default function Header() {
         showHeader ? 'translate-y-0' : '-translate-y-full'
       } ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}
     >
+      {/* Top Bar */}
       <div
-        className={`w-full px-4 py-1 flex justify-end gap-6 text-[10px] transition-all duration-300 ${
+        className={`w-full px-4 py-2 flex justify-end gap-6 text-sm transition-all duration-300 ${
           isScrolled ? 'text-gray-800' : 'text-white'
         }`}
       >
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           📞 <span>+91 831 2498777</span>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           ✉️ <span>resv@eefabelgaum.com</span>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto flex items-center justify-center px-4 py-2 transition duration-300">
-        <div className="flex items-center gap-6">
+      {/* Main Navbar */}
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 transition duration-300">
+        <div className="flex items-center gap-10">
           <Link href="/">
-            <img src="/logo.png" alt="Eefa Logo" className="h-8 transition duration-300" />
+            <img src="/logo.png" alt="Eefa Logo" className="h-10 transition duration-300" />
           </Link>
 
-          <nav className="hidden md:flex gap-6 text-[10px]">
+          <nav className="hidden md:flex gap-8 text-sm">
             {navItems.map((item) => {
               const isActive = pathname === item.path;
               return (
@@ -81,7 +83,11 @@ export default function Header() {
                       <button
                         className={`uppercase pb-[2px] border-b-2 transition-all duration-300 ${
                           isScrolled ? 'text-gray-800' : 'text-white'
-                        } ${isActive ? 'font-semibold border-blue-900' : 'border-transparent hover:border-blue-900'}`}
+                        } ${
+                          isActive
+                            ? 'font-semibold border-blue-900'
+                            : 'border-transparent hover:border-blue-900'
+                        }`}
                       >
                         {item.name}
                       </button>
@@ -91,7 +97,7 @@ export default function Header() {
                             <Link
                               key={sub.name}
                               href={sub.path}
-                              className="block px-4 py-2 text-[10px] text-gray-700 hover:bg-blue-900 hover:text-white whitespace-nowrap"
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-900 hover:text-white whitespace-nowrap"
                             >
                               {sub.name}
                             </Link>
@@ -104,7 +110,11 @@ export default function Header() {
                       href={item.path}
                       className={`uppercase pb-[2px] border-b-2 transition-all duration-300 ${
                         isScrolled ? 'text-gray-800' : 'text-white'
-                      } ${isActive ? 'font-semibold border-blue-900' : 'border-transparent hover:border-blue-900'}`}
+                      } ${
+                        isActive
+                          ? 'font-semibold border-blue-900'
+                          : 'border-transparent hover:border-blue-900'
+                      }`}
                     >
                       {item.name}
                     </Link>
@@ -115,6 +125,7 @@ export default function Header() {
           </nav>
         </div>
 
+        {/* Mobile Menu Button */}
         <div className="md:hidden ml-auto">
           <button onClick={toggleMenu} className={`${isScrolled ? 'text-black' : 'text-white'}`}>
             {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -122,8 +133,9 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Mobile Dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-white px-4 pb-4 shadow text-[10px]">
+        <div className="md:hidden bg-white px-4 pb-4 shadow text-sm">
           {navItems.map((item) => (
             <div key={item.name}>
               {!item.subItems ? (

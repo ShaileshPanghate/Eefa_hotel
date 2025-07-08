@@ -40,7 +40,7 @@ export default function FacilitiesPage() {
           {facilities.map((facility, index) => (
             <div
               key={index}
-              className="relative group aspect-square max-w-[170px] w-full overflow-hidden cursor-pointer perspective"
+              className="relative group aspect-square max-w-[260px] w-full overflow-hidden cursor-pointer perspective"
             >
               <div className="w-full h-full transition-transform duration-500 transform-style-preserve-3d group-hover:rotate-y-180">
                 {/* Front */}
@@ -53,7 +53,7 @@ export default function FacilitiesPage() {
                 </div>
 
                 {/* Back */}
-                <div className="absolute inset-0 flex items-center justify-center bg-white text-gray-800 text-center px-2 text-xs font-light rotate-y-180 backface-hidden">
+                <div className="absolute inset-0 flex items-center justify-center bg-white text-gray-800 text-center px-2 text-xl font-light rotate-y-180 backface-hidden">
                   {facility.title}
                 </div>
               </div>
