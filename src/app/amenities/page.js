@@ -1,7 +1,7 @@
 'use client';
 
 import { FaConciergeBell, FaWifi, FaDumbbell, FaBriefcase, FaSwimmingPool, FaSpa } from 'react-icons/fa';
-
+import Footer from '@/components/Footer';
 export default function AmenitiesPage() {
   return (
     <main>
@@ -14,7 +14,7 @@ export default function AmenitiesPage() {
         />
         <div className="absolute inset-0 flex items-end justify-center pb-5 bg-black/30">
           <h1 className="text-white text-3xl md:text-5xl font-light text-center">
-            Amenities
+            AMENITIES
           </h1>
         </div>
       </section>
@@ -48,6 +48,7 @@ export default function AmenitiesPage() {
           </div>
         </div>
       </section>
+      <Footer/>
     </main>
   );
 }
