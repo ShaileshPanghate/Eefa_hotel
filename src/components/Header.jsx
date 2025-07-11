@@ -4,25 +4,26 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { FaPhone, FaEnvelope } from 'react-icons/fa';
 
 const navItems = [
-  { name: 'Home', path: '/' },
+  { name: 'HOME', path: '/' },
   {
-    name: 'Rooms & Suite',
+    name: 'ROOMS & SUITE',
     subItems: [
-      { name: 'Standard Rooms', path: '/standard' },
-      { name: 'Deluxe Room', path: '/deluxe' },
-      { name: 'Studio Room', path: '/studio' },
-      { name: '2BHK Apartment', path: '/2bhk' },
-      { name: 'Presidential Suite', path: '/presidential' },
+      { name: 'STANDARD ROOMS', path: '/standard' },
+      { name: 'DELUXE ROOMS', path: '/deluxe' },
+      { name: 'STUDIO ROOMS', path: '/studio' },
+      { name: '2BHK APARTMENT', path: '/2bhk' },
+      { name: 'PRESIDENTIAL SUITE', path: '/presidential' },
     ],
   },
-  { name: 'Dining', path: '/dining' },
-  { name: 'Meetings & Events', path: '/meetings-events' },
-  { name: 'Gallery', path: '/gallery' },
-  { name: 'Facilities', path: '/facilities' },
-  { name: 'Amenities', path: '/amenities' },
-  { name: 'Contact Us', path: '/contact' },
+  { name: 'DINING', path: '/dining' },
+  { name: 'MEETINGS & EVENTS', path: '/meetings-events' },
+  { name: 'GALLERY', path: '/gallery' },
+  { name: 'FACILITIES', path: '/facilities' },
+  { name: 'AMENITIES', path: '/amenities' },
+  { name: 'CONTACT US', path: '/contact' },
 ];
 
 export default function Header() {
@@ -52,21 +53,28 @@ export default function Header() {
         showHeader ? 'translate-y-0' : '-translate-y-full'
       } ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}
     >
-      {/* Top Bar */}
+      {/* Top Contact Bar */}
       <div
-        className={`w-full px-4 py-2 flex justify-end gap-6 text-sm transition-all duration-300 ${
-          isScrolled ? 'text-gray-800' : 'text-white'
-        }`}
-      >
-        <div className="flex items-center gap-2">
-          📞 <span>+91 831 2498777</span>
-        </div>
-        <div className="flex items-center gap-2">
-          ✉️ <span>resv@eefabelgaum.com</span>
-        </div>
-      </div>
+  className={`w-full px-4 py-2 flex justify-end gap-6 text-sm transition-all duration-300 ${
+    isScrolled ? 'text-gray-800' : 'text-white'
+  }`}
+>
+  <div className="flex items-center gap-2">
+    <FaPhone className="text-sm" />
+    <a href="tel:+918312498777" className="hover:underline">
+      +91 831 2498777
+    </a>
+  </div>
+  <div className="flex items-center gap-2">
+    <FaEnvelope className="text-sm" />
+    <a href="mailto:resv@eefabelgaum.com" className="hover:underline">
+      resv@eefabelgaum.com
+    </a>
+  </div>
+</div>
 
-      {/* Main Navbar */}
+
+      {/* Desktop Navbar */}
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 transition duration-300">
         <div className="flex items-center gap-10">
           <Link href="/">
@@ -125,7 +133,7 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Toggle Button */}
         <div className="md:hidden ml-auto">
           <button onClick={toggleMenu} className={`${isScrolled ? 'text-black' : 'text-white'}`}>
             {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -133,31 +141,37 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
-      {menuOpen && (
-        <div className="md:hidden bg-white px-4 pb-4 shadow text-sm">
+      {/* Mobile Menu - Updated Styling */}
+      <div
+        className={`md:hidden bg-[#0F0F0F] text-white text-sm overflow-hidden transition-all duration-500 ease-in-out ${
+          menuOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="py-4 px-4 space-y-2">
           {navItems.map((item) => (
             <div key={item.name}>
               {!item.subItems ? (
                 <Link
                   href={item.path}
                   onClick={() => setMenuOpen(false)}
-                  className={`block py-2 uppercase font-medium ${
-                    pathname === item.path ? 'text-blue-800 font-bold' : 'text-gray-700'
+                  className={`block py-2 uppercase font-medium border-b border-gray-700 ${
+                    pathname === item.path ? 'text-blue-400 font-bold' : 'text-white'
                   }`}
                 >
                   {item.name}
                 </Link>
               ) : (
                 <div>
-                  <div className="block py-2 uppercase font-medium text-gray-900">{item.name}</div>
-                  <div className="pl-4 border-l border-gray-200 ml-2">
+                  <div className="block py-2 uppercase font-medium border-b border-gray-700 text-white">
+                    {item.name}
+                  </div>
+                  <div className="pl-4 ml-2">
                     {item.subItems.map((sub) => (
                       <Link
                         key={sub.name}
                         href={sub.path}
                         onClick={() => setMenuOpen(false)}
-                        className="block py-1 text-gray-600 hover:text-blue-800"
+                        className="block py-1 text-gray-300 hover:text-white text-sm"
                       >
                         {sub.name}
                       </Link>
@@ -168,7 +182,7 @@ export default function Header() {
             </div>
           ))}
         </div>
-      )}
+      </div>
     </header>
   );
 }

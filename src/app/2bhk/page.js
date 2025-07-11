@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Footer from '@/components/Footer';
 import {
   FaBed, FaTv, FaWifi, FaUtensils, FaSwimmer, FaCoffee,
   FaShower, FaFan, FaLock, FaSnowflake, FaPhone, FaChair
@@ -38,7 +39,7 @@ export default function StandardRoomPage() {
         />
         <div className="absolute inset-0 flex items-end justify-center pb-5 bg-black/30">
           <h1 className="text-white text-3xl md:text-5xl font-light text-center">
-            2 Bedroom Apartment
+            2 BEDROOM APARTMENT
           </h1>
         </div>
       </section>
@@ -183,6 +184,7 @@ export default function StandardRoomPage() {
           </div>
         )}
       </section>
+      <Footer/>
     </div>
   );
 }

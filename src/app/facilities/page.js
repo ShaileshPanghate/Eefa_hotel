@@ -1,5 +1,5 @@
 'use client';
-
+import Footer from "@/components/Footer";
 const facilities = [
   { icon: '/amenities-01.jpg', title: 'Buffet Service' },
   { icon: '/amenities-02.jpg', title: 'Free wifi 24×7 in room, lobby and restaurant for your convenience' },
@@ -16,6 +16,7 @@ const facilities = [
 
 export default function FacilitiesPage() {
   return (
+    <section>
     <div className="bg-white text-gray-800">
       <section className="relative w-full h-[30vh] overflow-hidden z-0">
         <img
@@ -25,7 +26,7 @@ export default function FacilitiesPage() {
         />
         <div className="absolute inset-0 flex items-end justify-center pb-5 bg-black/30">
           <h1 className="text-white text-3xl md:text-5xl font-light text-center">
-            Facilities
+            FACILITIES
           </h1>
         </div>
       </section>
@@ -77,5 +78,7 @@ export default function FacilitiesPage() {
         }
       `}</style>
     </div>
+    <Footer/>
+    </section>
   );
 }

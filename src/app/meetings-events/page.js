@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Footer from '@/components/Footer';
 
 export default function MeetingsEventsPage() {
   return (
@@ -12,7 +13,7 @@ export default function MeetingsEventsPage() {
         />
         <div className="absolute inset-0 flex items-end justify-center pb-5 bg-black/30">
           <h1 className="text-white text-3xl md:text-5xl font-light text-center">
-            Banquets in Belgaum
+            BANQUETS IN BELGAUM
           </h1>
         </div>
       </section>
@@ -72,6 +73,7 @@ export default function MeetingsEventsPage() {
 /** Reusable Section Component */
 function SectionBlock({ title, description, image, imageRight = true }) {
   return (
+    
     <section className="bg-white">
       <div className={`w-full max-w-screen-xl mx-auto px-6 md:px-16 flex flex-col md:flex-row ${imageRight ? '' : 'md:flex-row-reverse'}`}>
 
@@ -91,6 +93,9 @@ function SectionBlock({ title, description, image, imageRight = true }) {
           />
         </div>
       </div>
+      
     </section>
+    
+    
   );
 }
