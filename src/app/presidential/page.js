@@ -217,9 +217,9 @@ export default function StandardRoomPage() {
   {/* Third-Party Comparisons */}
   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
-  {/* MakeMyTrip 
+  
   <a
-    href="https://www.makemytrip.com/"
+    href="https://www.makemytrip.com/hotels/hotel_eefa-details-belgaum.html"
     target="_blank"
     rel="noopener noreferrer"
     className="block bg-red-50 border border-red-300 rounded-lg p-4 shadow-sm transition-transform hover:scale-[1.02]"
@@ -227,7 +227,7 @@ export default function StandardRoomPage() {
     <h3 className="text-lg font-semibold text-red-800 mb-1">MakeMyTrip</h3>
     <p className="text-sm text-gray-700">₹3,305 + ₹731 taxes</p>
     <p className="font-semibold text-gray-900 mt-1">Total: ₹4,036</p>
-  </a> */}
+  </a> 
 
   {/* Goibibo */}
   <a

@@ -40,7 +40,7 @@ export default function TestimonialsSlider() {
     <section className="relative bg-black/80 text-white py-16">
       {/* Background Image */}
       <Image
-        src="/images/testimonial-bg.jpg"
+        src="/36.jpg"
         alt="Testimonial Background"
         layout="fill"
         objectFit="cover"
