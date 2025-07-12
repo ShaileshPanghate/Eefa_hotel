@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { SlArrowRight } from "react-icons/sl";
 
@@ -61,7 +62,7 @@ const Amenities = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left px-6 md:px-0">
                         {/* HOTEL FEATURES */}
                         <div>
-                            <h2 className="text-xl font-semibold mb-4">HOTEL FEATURES</h2>
+                            <h2 className="text-xl text-black font-semibold mb-4">HOTEL FEATURES</h2>
                             <ul className="space-y-3 text-sm text-gray-700">
                                 <li className="flex items-center">
                                     <SlArrowRight className="text-black font-bold text-lg mr-2" /> 58 spacious guest rooms</li>
@@ -86,7 +87,7 @@ const Amenities = () => {
 
                         {/* SERVICES */}
                         <div>
-                            <h2 className="text-xl font-semibold mb-4">SERVICES</h2>
+                            <h2 className="text-xl text-black font-semibold mb-4">SERVICES</h2>
                             <ul className="space-y-3 text-sm text-gray-700">
                                 <li className="flex items-center">
                                     <SlArrowRight className="text-black font-bold text-lg mr-2" /> Laundry and dry cleaning services</li>
@@ -105,7 +106,7 @@ const Amenities = () => {
 
                         {/* ROOM AMENITIES */}
                         <div>
-                            <h2 className="text-xl font-semibold mb-4">ROOM AMENITIES</h2>
+                            <h2 className="text-xl text-black font-semibold mb-4">ROOM AMENITIES</h2>
                             <ul className="space-y-3 text-sm text-gray-700">
                                 <li className="flex items-center">
                                     <SlArrowRight className="text-black font-bold text-lg mr-2" /> Complimentary Wi-Fi</li>
@@ -128,7 +129,7 @@ const Amenities = () => {
 
                         {/* BATHROOM */}
                         <div>
-                            <h2 className="text-xl font-semibold mb-4">BATHROOM</h2>
+                            <h2 className="text-xl text-black font-semibold mb-4">BATHROOM</h2>
                             <ul className="space-y-3 text-sm text-gray-700">
                                 <li className="flex items-center">
                                     <SlArrowRight className="text-black font-bold text-lg mr-2" />Luxury bathroom toiletries</li>
